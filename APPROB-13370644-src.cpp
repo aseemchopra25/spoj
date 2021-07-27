@@ -1,0 +1,39 @@
+#include<cstdio>
+#define LL long long int
+inline LL gcd(LL a, LL b)
+{
+    if(b==0)
+        return a;
+    return gcd(b,a%b);
+}
+inline void fastRead_int(LL *a)
+{
+    register char c=0;
+    while (c<33) c=getchar_unlocked();
+    *a=0;
+    while (c>33)
+    {
+        *a=*a*10+c-'0';
+        c=getchar_unlocked();
+    }
+}
+int main()
+{
+    LL t,n,sq,num,d,div;
+    fastRead_int(&t);
+    while(t--)
+    {
+        fastRead_int(&n);
+        sq=n*n;
+        if(n&1)
+            num=(3*sq+1)/2;
+        else
+            num=(3*sq)/2;
+        d=6*n*sq;
+        div=gcd(num,d);
+        printf("%lld/%lld\n",num/div,d/div);
+        
+            
+    }
+    return 0;
+}

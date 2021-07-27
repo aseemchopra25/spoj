@@ -1,0 +1,3 @@
+#include<cstdio>
+#define pc(x) putchar_unlocked(x);
+bool b[1000001];inline void writeInt (int n){int N = n, rev, count = 0;rev = N;if (N == 0) { pc('0'); pc('\n'); return ;}while ((rev % 10) == 0) { count++; rev /= 10;}rev = 0;while (N != 0) { rev = (rev<<3) + (rev<<1) + N % 10; N /= 10;}while (rev != 0) { pc(rev % 10 + '0'); rev /= 10;}while (count--) pc('0');}int main(){int i=1,s;while(i<1000000){if(b[i]==0){writeInt(i);putchar_unlocked('\n');s=i+i%10+(i/10)%10+(i/100)%10+(i/1000)%10+(i/10000)%10+(i/100000)%10;while(s<1000000 && b[s]==0){b[s]=1;s=s+s%10+(s/10)%10+(s/100)%10+(s/1000)%10+(s/10000)%10+(s/100000)%10;;}}i++;}return 0;}
